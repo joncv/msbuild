@@ -6,7 +6,7 @@ trigger:
 jobs:
 - job: FullOnWindows
   displayName: "Build and test on Windows using full MSBuild"
-  pool: 'Hosted VS2017'
+  pool: 'Hosted VS2019'
   steps:
   - task: BatchScript@1
     displayName: cibuild.cmd
@@ -46,7 +46,7 @@ jobs:
 
 - job: BootstrapMSBuildOnFullFrameworkWindows
   displayName: "Build and test on Windows using bootstrapped full MSBuild"
-  pool: 'Hosted VS2017'
+  pool: 'Hosted VS2019'
   steps:
   - task: BatchScript@1
     displayName: cibuild.cmd
@@ -85,7 +85,7 @@ jobs:
 
 - job: BootstrapMSBuildOnCoreWindows
   displayName: "Build and test on Windows using bootstrapped core MSBuild"
-  pool: 'Hosted VS2017'
+  pool: 'Hosted VS2019'
   steps:
   - task: BatchScript@1
     displayName: cibuild.cmd
@@ -125,7 +125,7 @@ jobs:
 
 - job: FullReleaseOnWindows
   displayName: "Build and test Release on Windows using full MSBuild"
-  pool: 'Hosted VS2017'
+  pool: 'Hosted VS2019'
   steps:
   - task: BatchScript@1
     displayName: cibuild.cmd
