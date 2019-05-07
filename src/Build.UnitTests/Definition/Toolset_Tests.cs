@@ -182,12 +182,12 @@ namespace Microsoft.Build.UnitTests.Definition
 
             if (t != null)
             {
-                if (Toolset.Dev10IsInstalled)
-                {
-                    // If Dev10 is installed, the default sub-toolset = no sub-toolset
-                    Assert.Equal(Constants.Dev10SubToolsetValue, t.DefaultSubToolsetVersion);
-                }
-                else
+                // if (Toolset.Dev10IsInstalled)
+                // {
+                //     // If Dev10 is installed, the default sub-toolset = no sub-toolset
+                //     Assert.Equal(Constants.Dev10SubToolsetValue, t.DefaultSubToolsetVersion);
+                // }
+                // else
                 {
                     // Otherwise, it's the highest one numerically.  Since by definition if Dev10 isn't 
                     // installed and subtoolsets exists we must be at least Dev11, it should be "11.0" 
@@ -210,11 +210,11 @@ namespace Microsoft.Build.UnitTests.Definition
 
                 Toolset t = new Toolset("Fake", parentToolset.ToolsPath, null, projectCollection, null, parentToolset.OverrideTasksPath);
 
-                if (Toolset.Dev10IsInstalled)
-                {
-                    Assert.Equal(Constants.Dev10SubToolsetValue, t.DefaultSubToolsetVersion);
-                }
-                else
+                // if (Toolset.Dev10IsInstalled)
+                // {
+                //     Assert.Equal(Constants.Dev10SubToolsetValue, t.DefaultSubToolsetVersion);
+                // }
+                // else
                 {
                     Assert.Null(t.DefaultSubToolsetVersion);
                 }
@@ -246,11 +246,11 @@ namespace Microsoft.Build.UnitTests.Definition
 
                 string subToolsetVersion = t.GenerateSubToolsetVersion();
 
-                if (Toolset.Dev10IsInstalled)
-                {
-                    Assert.Equal(Constants.Dev10SubToolsetValue, subToolsetVersion);
-                }
-                else
+                // if (Toolset.Dev10IsInstalled)
+                // {
+                //     Assert.Equal(Constants.Dev10SubToolsetValue, subToolsetVersion);
+                // }
+                // else
                 {
                     Assert.Null(subToolsetVersion);
                 }
