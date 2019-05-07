@@ -3725,15 +3725,15 @@ namespace Microsoft.Build.UnitTests.Evaluation
                 bool result = project.Build(logger);
                 Assert.True(result);
 
-                if (Toolset.Dev10IsInstalled)
-                {
-                    // if Dev10 is installed, the default sub-toolset is nothing == base toolset.
-                    logger.AssertLogContains(".[a1].");
-                    logger.AssertLogContains(".[[b1]].");
-                    logger.AssertLogContains(".[[[]]].");
-                    logger.AssertLogContains(".[[[[10.0]]]].");
-                }
-                else
+                // if (Toolset.Dev10IsInstalled)
+                // {
+                //     // if Dev10 is installed, the default sub-toolset is nothing == base toolset.
+                //     logger.AssertLogContains(".[a1].");
+                //     logger.AssertLogContains(".[[b1]].");
+                //     logger.AssertLogContains(".[[[]]].");
+                //     logger.AssertLogContains(".[[[[10.0]]]].");
+                // }
+                // else
                 {
                     // if Dev10 is not installed, the default sub-toolset is the numerical least -- in our case, "11.0" --
                     // so the toolset properties are a combination of that + the base toolset.
